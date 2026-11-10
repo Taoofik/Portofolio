@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Bibliothèque – Mon Portfolio</title>
+    <style>
+        :root {
+            --fond: #0f172a;
+            --surface: #1e293b;
+            --texte: #f8fafc;
+            --texte-doux: #cbd5e1;
+            --accent: #fbbf24;
+            --trait: #334155;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--fond);
+            color: var(--texte);
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+        }
+        main { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+        a { color: var(--accent); }
+        a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+        .retour { display: inline-block; margin-bottom: 2.5rem; color: var(--texte-doux); }
+        h1 { font-size: clamp(2.2rem, 6vw, 3rem); letter-spacing: -0.05em; line-height: 1.1; margin: 0 0 1rem; }
+        .intro { font-size: 1.15rem; color: var(--texte-doux); margin: 0 0 3rem; }
+        h2 { font-size: 1.6rem; letter-spacing: -0.03em; margin: 3.5rem 0 1rem; }
+        h3 { font-size: 1.1rem; margin: 0 0 .25rem; }
+        p { margin: 0 0 1rem; }
+        ol.etapes { list-style: none; margin: 1.5rem 0 0; padding: 0; border-left: 2px solid var(--trait); }
+        ol.etapes li { position: relative; padding: 0 0 1.75rem 1.75rem; }
+        ol.etapes li::before {
+            content: counter(etape);
+            counter-increment: etape;
+            position: absolute; left: -.95rem; top: 0;
+            width: 1.75rem; height: 1.75rem; border-radius: 50%;
+            background: var(--accent); color: var(--fond);
+            font-weight: 700; font-size: .9rem; text-align: center; line-height: 1.75rem;
+        }
+        ol.etapes { counter-reset: etape; }
+        ol.etapes p { color: var(--texte-doux); margin: 0; }
+        pre {
+            background: var(--surface); border: 1px solid var(--trait); border-radius: 8px;
+            padding: 1rem 1.1rem; overflow-x: auto; font-size: .9rem; line-height: 1.6; margin: 1rem 0 1.5rem;
+        }
+        code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+        p code, li code { background: var(--surface); padding: .1rem .4rem; border-radius: 4px; font-size: .9em; }
+        dl { margin: 1.5rem 0 0; }
+        dt { font-weight: 700; margin-top: 1.1rem; }
+        dd { margin: .15rem 0 0; color: var(--texte-doux); }
+        .liste { margin: 0; padding-left: 1.2rem; color: var(--texte-doux); }
+        .liste li { margin-bottom: .4rem; }
+        footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--trait); color: var(--texte-doux); }
+    </style>
+</head>
+<body>
+<main>
+    <a class="retour" href="index.html">Retour à l’accueil</a>
+
+    <h1>Projet Bibliothèque</h1>
+    <p class="intro">Une application de gestion de bibliothèque : cataloguer des livres, enregistrer les adhérents et suivre les emprunts. Cette page explique comment le projet a été mené, de l’idée jusqu’à la mise en ligne, et comment GitHub m’a servi à l’organiser.</p>
+
+    <h2>Les objectifs du projet</h2>
+    <ul class="liste">
+        <li>Ajouter, modifier et supprimer des livres du catalogue.</li>
+        <li>Gérer les adhérents de la bibliothèque.</li>
+        <li>Enregistrer les emprunts et les retours, avec les dates associées.</li>
+        <li>Rechercher un livre par titre, auteur ou disponibilité.</li>
+    </ul>
+
+    <h2>Les étapes de réalisation</h2>
+    <ol class="etapes">
+        <li>
+            <h3>Analyse du besoin</h3>
+            <p>Je définis ce que l’application doit faire et qui va l’utiliser. Le résultat est un cahier des charges listant les fonctionnalités attendues.</p>
+        </li>
+        <li>
+            <h3>Conception</h3>
+            <p>Je dessine la structure des données (livres, adhérents, emprunts) et les liens entre elles, puis les maquettes des écrans principaux.</p>
+        </li>
+        <li>
+            <h3>Développement</h3>
+            <p>Je code les fonctionnalités l’une après l’autre, en commençant par le catalogue, puis les adhérents, puis les emprunts.</p>
+        </li>
+        <li>
+            <h3>Tests</h3>
+            <p>Je vérifie chaque fonctionnalité avec des cas normaux et des cas limites, par exemple emprunter un livre déjà prêté.</p>
+        </li>
+        <li>
+            <h3>Documentation et publication</h3>
+            <p>Je rédige un fichier README qui explique comment installer et utiliser le projet, puis je publie le code sur GitHub.</p>
+        </li>
+    </ol>
+
+    <h2>L’utilisation de GitHub</h2>
+    <p>Git enregistre l’historique de mon code et GitHub l’héberge en ligne. Cela me permet de revenir à une version précédente en cas d’erreur, de travailler sur une nouvelle fonctionnalité sans casser le reste, et de partager le projet facilement.</p>
+
+    <dl>
+        <dt>Dépôt (repository)</dt>
+        <dd>Le dossier du projet sur GitHub. Il contient le code, le README et tout l’historique des modifications.</dd>
+        <dt>Commit</dt>
+        <dd>Un point de sauvegarde avec un message qui décrit ce qui a changé.</dd>
+        <dt>Branche</dt>
+        <dd>Une copie parallèle du projet pour développer une fonctionnalité sans toucher à la version stable.</dd>
+        <dt>Pull request</dt>
+        <dd>Une demande pour fusionner une branche dans la branche principale, après relecture.</dd>
+        <dt>Issue</dt>
+        <dd>Une tâche ou un bug à traiter, qui permet de suivre l’avancement du projet.</dd>
+    </dl>
+
+    <h2>Mon déroulé de travail</h2>
+    <pre><code># 1. Récupérer le projet
+git clone https://github.com/votre-pseudo/bibliotheque.git
+
+# 2. Créer une branche pour une fonctionnalité
+git checkout -b ajout-emprunts
+
+# 3. Enregistrer mes modifications
+git add .
+git commit -m "Ajout de l'enregistrement des emprunts"
+
+# 4. Envoyer la branche sur GitHub
+git push origin ajout-emprunts</code></pre>
+    <p>Sur GitHub, j’ouvre ensuite une pull request pour fusionner <code>ajout-emprunts</code> dans la branche <code>main</code>, puis je supprime la branche devenue inutile.</p>
+
+    <h2>Ce que j’ai appris</h2>
+    <ul class="liste">
+        <li>Découper un projet en petites étapes et les suivre avec des issues.</li>
+        <li>Écrire des messages de commit clairs, pour retrouver facilement une modification.</li>
+        <li>Utiliser les branches pour tester sans risque.</li>
+        <li>Documenter mon travail pour qu’une autre personne puisse le reprendre.</li>
+    </ul>
+
+    <footer>
+        <a href="https://github.com/votre-pseudo/bibliotheque">Voir le dépôt sur GitHub</a>
+    </footer>
+</main>
+</body>
+</html>
